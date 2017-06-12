@@ -38,7 +38,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 				$("#difficulty_range").attr("difficulty",ui.value);
 				$("#difficulty_range").val(LOM_Difficulty[ui.value].text);
 			}
-		}); 
+		});
 		$( "#difficulty_range" ).attr( "difficulty" , V.Constant.DIFFICULTY);
 		$("#difficulty_range").val(LOM_Difficulty[V.Constant.DIFFICULTY].text);
 
@@ -193,7 +193,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if(presentation.context){
 			$("#context_tag").val(presentation.context);
 		}
-		
+
 		if(presentation.age_range){
 			var start_range = presentation.age_range.substring(0, presentation.age_range.indexOf("-")-1);
 			var end_range = presentation.age_range.substring(presentation.age_range.indexOf("-")+2);
@@ -225,7 +225,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if(presentation.subject){
 			$("#subject_tag").val(presentation.subject);
 		}
-		
+
 		//Advanced Settings
 		if(presentation.educational_objectives){
 			$("#educational_objectives_textarea").val(presentation.educational_objectives);
@@ -261,6 +261,16 @@ VISH.Editor.Settings = (function(V,$,undefined){
 			$("#allow_following_rte").prop('checked', true);
 		}
 
+		if(presentation.ucf_allow_ws_client == "false"){
+			$("#ucf_allow_ws_client").prop("checked", false);
+		} else {
+			$("#ucf_allow_ws_client").prop('checked', true);
+		}
+
+		if(presentation.ucf_websocket_url){
+			$("#ucf_websocket_url").val(presentation.ucf_websocket_url);
+		}
+
 		if(V.Editor.hasBeenSaved()){
 			$('.attachmentFileUpload').removeAttr('disabled');
 			$('#attachment_file').removeAttr('disabled');
@@ -273,7 +283,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 			$('#attachment_file').prop('disabled',true);
 		}
 	};
-	
+
 	var selectTheme = function(themeNumber){
 		$(".theme_selected_in_fancybox").removeClass("theme_selected_in_fancybox");
 		$("#theme_fancybox div#select_theme"+themeNumber+" img").addClass("theme_selected_in_fancybox");
@@ -312,7 +322,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 			}
 
 			var config = V.Configuration.getConfiguration();
-			$(tagList).tagit({tagSource:data, sortable:true, maxLength:config.tagsSettings.maxLength, maxTags:config.tagsSettings.maxTags, triggerKeys:config.tagsSettings.triggerKeys, 
+			$(tagList).tagit({tagSource:data, sortable:true, maxLength:config.tagsSettings.maxLength, maxTags:config.tagsSettings.maxTags, triggerKeys:config.tagsSettings.triggerKeys,
 			watermarkAllowMessage: V.I18n.getTrans("i.AddTags"), watermarkDenyMessage: V.I18n.getTrans("i.limitReached")});
 		}
 	};
@@ -429,7 +439,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 	/**
 	 * function called when the user clicks on the save button
 	 * in the initial presentation details fancybox to save
-	 * the data in order to be stored at the end in the JSON file   
+	 * the data in order to be stored at the end in the JSON file
 	 */
 	var onSavePresentationDetailsButtonClicked = function(event){
 		event.preventDefault();
@@ -459,7 +469,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if((typeof description == "string")&&(description.trim()!="")){
 			settings.description = description;
 		}
-		
+
 		if(presentationThumbnail){
 			settings.avatar = presentationThumbnail;
 		}
@@ -478,7 +488,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if((typeof _contributors == "object")&&(_contributors.length > 0)){
 			settings.contributors = _contributors;
 		}
-		
+
 		var tags = getTags();
 		if((tags)&&(tags.length > 0)){
 			settings.tags = tags;
@@ -490,7 +500,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if((typeof licenseName == "string")&&(licenseKey)){
 			settings.license = {name: licenseName, key: licenseKey};
 		}
-		
+
 		var themeNumber = V.Editor.Themes.Presentation.getCurrentTheme().number;
 		if(typeof  themeNumber == "string"){
 			settings.theme = "theme" + themeNumber;
@@ -510,7 +520,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if(typeof language == "string"){
 			settings.language = language;
 		}
-		
+
 		var context = $("#context_tag").val();
 		if((typeof context == "string")&&(context!="unspecified")){
 			settings.context = context;
@@ -520,7 +530,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if((typeof age_range == "string")&&(age_range != V.I18n.getTrans("i.unspecified"))){
 			settings.age_range = age_range;
 		}
-		
+
 		var difficultyIndexValue = $("#difficulty_range").attr("difficulty");
 		var difficultyValue = LOM_Difficulty[difficultyIndexValue];
 		if(typeof difficultyValue == "object"){
@@ -529,7 +539,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 				settings.difficulty = difficulty;
 			}
 		}
-		
+
 		var TLT = _getTLT();
 		if(typeof TLT == "string"){
 			settings.TLT = TLT;
@@ -549,7 +559,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 				settings.subject = subjectsToSave;
 			}
 		}
-		
+
 		var educational_objectives = $("#educational_objectives_textarea").val();
 		if((typeof educational_objectives == "string")&&(educational_objectives.trim()!="")){
 			settings.educational_objectives = educational_objectives;
@@ -580,12 +590,26 @@ VISH.Editor.Settings = (function(V,$,undefined){
 		if(typeof allow_following_rte == "boolean"){
 			settings.allow_following_rte = allow_following_rte.toString();
 		}
-		
+
 		var attachment_file_name = V.Editor.Utils.filterFilePath(document.getElementById("description_attachment").value);
 		if(attachment_file_name != "" && $('#upload_file_attachment').prop('disabled')){
 			settings.attachment_file_name = attachment_file_name;
 		}
-		
+
+		//UCF
+		var config = V.Configuration.getConfiguration();
+		if(config["ucf"] === true){
+			var ucf_allow_ws_client = $("#ucf_allow_ws_client").is(':checked');
+			if(typeof ucf_allow_ws_client == "boolean"){
+				settings.ucf_allow_ws_client = ucf_allow_ws_client.toString();
+			}
+
+			var ucf_websocket_url = $("#ucf_websocket_url").val();
+			if((typeof ucf_websocket_url == "string")&&(ucf_websocket_url.trim()!="")){
+				settings.ucf_websocket_url = ucf_websocket_url;
+			}
+		}
+
 		//callbacks
 		$('.attachmentFileUpload').prop('disabled', false);
 		$('#attachment_file').prop('disabled', false);
@@ -609,7 +633,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 			hours = parseInt(hours);
 			minutes = parseInt(minutes);
 			seconds = parseInt(seconds);
-			
+
 			if((hours>=0)&&(hours<100)&&(minutes>=0)&&(minutes<60)&&(seconds>=0)&&(seconds<60)){
 				if(hours*24*60+minutes*60+seconds>0){
 					if(hours!=0){
@@ -690,7 +714,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 	 	$("#catalog_content").hide();
 	 	$("#presentation_details_fields").slideUp();
 	 	$("#metadata_options_fields").slideDown();
-	 	if ($("#advanced_tabs .fancy_selected") != undefined ){ 
+	 	if ($("#advanced_tabs .fancy_selected") != undefined ){
 	 		$(".help_in_settings").attr("id", "help-" + $("#advanced_tabs .fancy_selected").attr("tab"));
 	 	}
 	 };
@@ -702,7 +726,7 @@ VISH.Editor.Settings = (function(V,$,undefined){
 	 	event.preventDefault();
 	 	$("#metadata_options_fields").slideUp();
 	 	$("#presentation_details_fields").slideDown();
-	 	$(".help_in_settings").attr("id","help_in_settings"); 
+	 	$(".help_in_settings").attr("id","help_in_settings");
 	 };
 
 	/**

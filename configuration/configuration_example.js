@@ -7,7 +7,7 @@ var options;
 var getOptions = function(){
 	if(!options){
 		options = {};
-		
+
 		//Specify VISH Editor Configuration
 		var configuration = {};
 
@@ -46,6 +46,11 @@ var getOptions = function(){
 		configuration["LRE_path"] = "http://localhost:3000/lre/search";
 		configuration["SoundCloud"] = true;
 		configuration["SoundCloudAPIKEY"] = 'SoundcloudAPIKey';
+
+		/////////////////////
+		// UCF (Enable export SCORM UCF and tab with UCF settings)
+		/////////////////////
+		configuration["ucf"] = true;
 
 		/////////////////////
 		// Features enabled (other services)
@@ -100,7 +105,7 @@ var getOptions = function(){
 		// Behaviour customization
 		/////////////////////
 		configuration["presentationSettings"] = true;
-		configuration["tagsSettings"] = {maxLength: 20, maxTags: 8, triggerKeys: ['enter', 'space', 'comma', 'tab']};	
+		configuration["tagsSettings"] = {maxLength: 20, maxTags: 8, triggerKeys: ['enter', 'space', 'comma', 'tab']};
 		configuration["catalog"] = ["Art", "Astronomy", "Biology", "Chemistry", "Citizenship", "Classical Languages", "Cross Curricular Education", "Computer Science", "General Culture", "Economics", "Education", "Electronics", "Environmental Education", "Ethics", "Foreign Languages", "Geography", "Geology", "Health Education", "History", "Home Economics", "Literature", "Law", "Mathematics", "Music", "Natural Sciences", "Philosophy", "Physical Education", "Physics", "Politics", "Psychology", "Religion", "Social Sciences", "Software Engineering", "Technology", "Telecommunications"];
 		configuration["publishPermissions"] = ["Comment","Download","Clone"]
 
@@ -220,7 +225,7 @@ var getOptions = function(){
 		addon.config.enable = true;
 
 		options.addons.push(addon);
-		
+
 		if((typeof window != "undefined")&&(window.console) && (window.console.log)){
 			console.log("ViSH Editor Configured Options");
 			console.log(options);

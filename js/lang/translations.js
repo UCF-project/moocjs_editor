@@ -186,8 +186,8 @@ VISH.Locales = {
 		"i.Next"					: "Next",
 		"i.no"						: "no",
 		"i.notify_teacher"			: "Notify",
-		"i.notifed_teacher"			: "Notified", 
-		"i.notify_teacher_confirmation"	: "Did you finish your work and want to notify teacher for publishing it?", 
+		"i.notifed_teacher"			: "Notified",
+		"i.notify_teacher_confirmation"	: "Did you finish your work and want to notify teacher for publishing it?",
 		"i.No"						: "No",
 		"i.NoFileError"				: "You have not selected any file to import.",
 		"i.NoJSONFileError"			: "You have to select a file to import in JSON format",
@@ -232,7 +232,7 @@ VISH.Locales = {
 		"i.Publication"				: "Publication",
 		"i.publish"					: "publish",
 		"i.Publish"					: "Publish",
-		"i.Published"				: "Published", 
+		"i.Published"				: "Published",
 		"i.publishing"				: "publishing",
 		"i.Publishing"				: "Publishing",
 		"i.Publish_confirmation"	: "You are going to save and publish this Virtual Excursion on the ViSH Platform. After this, the excursion will be public and anyone will be able to access it. What would you like to do?",
@@ -310,6 +310,7 @@ VISH.Locales = {
 		"i.toJSON"					: "to JSON",
 		"i.toSCORM12"				: "to SCORM 1.2",
 		"i.toSCORM2004"				: "to SCORM 2004",
+		"i.toSCORMUCF"				: "to SCORM UCF",
 		"i.Typicallearningtime"		: "Typical learning time",
 		"i.University"				: "University",
 		"i.unpublish"				: "unpublish",
@@ -395,7 +396,7 @@ VISH.Locales = {
 		"i.walkWelcome13_1"			: "Ayuda Contextual",
 		"i.walkWelcome13_2"			: "Si tienes cualquier duda, siempre puedes hacer click en cualquiera de los \"iconos de ayuda contextual\" para ver ayuda e instrucciones adicionales relativas a la pantalla donde te encuentras o al elemento sobre el cual el icono se encuentra situado.",
 		"i.walkWelcome13_3"			: "Icono de Ayuda Contextual",
-		
+
 		"i.walkSettings1_1"			: "Bienvenido a la pantalla de Ajustes",
 		"i.walkSettings1_2"			: "Aquí puedes especificar información acerca de tu Excursión Virtual.",
 		"i.walkSettings1_3"			: "El título y el avatar (una imagen que identifica tu excursión en la plataforma ViSH) son campos obligatorios, de modo que debes rellenarlos antes de publicar la excursión.",
@@ -406,7 +407,7 @@ VISH.Locales = {
 		"i.walkSettings3_2"			: "Pulsa sobre este botón para elegir una imagen que represente a tu excursión. Esta imagen será el avatar de tu excursión y es importante porque será mostrada en la plataforma ViSH, permitiendo a los usuarios identificar la excursión.",
 		"i.walkSettings4_1"			: "Añade una licencia para esta excursión (Obligatorio)",
 		"i.walkSettings4_2"			: "Ya que eres el autor de esta excursión, necesitas que tenga una licencia. Para ello puedes incluir una de las siguientes licencias de Creative Commons desde el menú desplegable. Esta es la página de licencias Creative Commons (https://creativecommons.org/licenses/) donde te explican las diferentes licencias en profundidad.",
-		"i.walkSettings4_3"			: "Recuerda que solamente puedes cambiar la licencia antes de publicar la excursión. Si ya la has publicado, el menú desplegable permanecerá desactivado y no podrás cambiarla.", 
+		"i.walkSettings4_3"			: "Recuerda que solamente puedes cambiar la licencia antes de publicar la excursión. Si ya la has publicado, el menú desplegable permanecerá desactivado y no podrás cambiarla.",
 		"i.walkSettings5_1"			: "Escribe una descripción",
 		"i.walkSettings5_2"			: "Aqui puedes explicar en detalle sobre qué trata la excursión.",
 		"i.walkSettings5_3"			: "Esta descripción será mostrada en la plataforma ViSH en la página de esta excursión. Por lo tanto, todos los usuarios que accedan a esta excursión podrán leerla.",
@@ -428,7 +429,7 @@ VISH.Locales = {
 		"i.walkSettings10_1"		: "Empezar a utilizar ViSH Editor",
 		"i.walkSettings10_2"		: "Una vez que hayas rellenado la información de tu excursión, por lo menos el título y el avatar, puedes empezar a crear tu excursión con ViSH Editor pulsando sobre el botón 'Continuar'.",
 		"i.walkSettings10_3"		: "Si no deseas rellenar la información en este momento, también puedes empezar a usar ViSH Editor pulsando sobre el botón 'Rellenar después', en este caso recuerda que deberás volver a la pantalla de Ajustes y completar todos los campos obligatorios antes de publicar la excursión.",
-		
+
 		"i.walkMetadata1_1" 		: "Bienvenido a la pantalla de Metadatos",
 		"i.walkMetadata1_2_1" 		: "En esta pantalla puedes especificar más información pedagógica acerca de tu excursión. Estos metadatos están basados y son conformes al estándar LOM (Learning Object Metadata). La última especificación de este estándar, en la cual se explica de una manera detallada todos los campos de esta pantalla, se puede encontrar",
 		"i.walkMetadata1_2_2" 		: "aquí",
@@ -440,17 +441,17 @@ VISH.Locales = {
 		"i.walkMetadata1_8" 		: "Tiempo aproximado o típico que se necesita para trabajar con este objeto de aprendizaje.",
 		"i.walkMetadata1_9" 		: "El tema (o temas) de esta excursión.",
 		"i.walkMetadata1_10" 		: "Comentarios acerca de como este objeto de aprendizaje puede o va a ser utilizado.",
-		
+
 		"i.walkPublication1_1"		: "Bienvenido a la pantalla de permisos en ViSH Editor",
 		"i.walkPublication1_2"		: "En esta pantalla podrás cambiar los permisos que tendrán el resto de usuarios de la plataforma ViSH sobre tu excursión una vez publicada. Podrás cambiar esta configuración en cualquier momento.",
 		"i.walkPublication1_3"		: "permite activar o desactivar los comentarios de la excursión.",
 		"i.walkPublication1_4"		: "permite a otros usuarios descargar la excursión en cualquier formato.",
 		"i.walkPublication1_5"		: "permite a otros usuarios obtener una copia de la excursión en su propia cuenta manteniendo la cadena de autoría e incluyendo una referencia al autor (o autores) original.",
-		
+
 		"i.walkRTE1_1"				: "Bienvenido a la pantalla de opciones del RTE",
 		"i.walkRTE1_2"				: "En esta pantalla podrás especificar las opciones de integración e interacción del objeto de aprendizaje (es decir, la excursión) con el RTE (Run-Time Environment) o entorno de ejecución.",
 		"i.walkRTE1_3"				: "Cuando el objeto de aprendizaje se exporta a un formato estándar de e-Learning como SCORM y se integra en un sistema externo (por ejemplo, un LMS como Moodle o Blackboard), este se comunica con el entorno de ejecución del sistema externo. Las opciones de esta pantalla permiten configurar diferentes aspectos de esa comunicación.",
-		
+
 		"i.walkSlide1_1"			: "Añadiendo contenido a una diapositiva",
 		"i.walkSlide1_2"			: "Para añadir contenido a una diapositiva, primero tienes que pulsar sobre cualquiera de las areas editables disponibles en ella. Estas áreas tienen un borde punteado y un texto que dice ",
 		"i.walkSlide1_3"			: "Una vez que hayas seleccionado una de estas áreas, aparecerán varios iconos dentro.",
@@ -493,7 +494,7 @@ VISH.Locales = {
 		"i.walkImagesLRE1_1"		: "Ahora te encuentras en la pestaña del repositorio del LRE, haz click en \"Siguiente\" para continuar.",
 		"i.walkImagesLRE2_1"		: "Buscar imágenes en el repositorio del LRE",
 		"i.walkImagesLRE2_2"		: "Esta pantalla te permite buscar imágenes en el repositorio del LRE.",
-		
+
 		"i.walkObjectsMain_1"		: "Añadiendo objetos",
 		"i.walkObjectsMain_2"		: "Esta pantalla te permite añadir diferentes tipos de objetos a las diapositivas. Puedes seleccionar el objeto a insertar de diferentes fuentes.",
 		"i.walkObjectsMain_Web"		: "añadir una web pegando su enlace (url)",
@@ -559,7 +560,7 @@ VISH.Locales = {
 		"i.walkInsertingViSHPres_2"	: "Aquí puedes buscar Excursiones Virtuales en la plataforma ViSH para añadirlas (o añadir determinadas diapositivas de ellas) a tu presentación.",
 		"i.walkInsertingViSHPres_3"	: "Haz click en cualquiera de las Excursiones Virtuales para seleccionarla. Después, se mostrará un nuevo botón 'Vista Previa'. Cuando pulses este botón, aparecerá una nueva ventana para que elijas las diapositivas que quieres insertar en tu presentación.",
 		"i.walkPresSearch2"			: "y pulsa la tecla 'intro' para comenzar la búsqueda. Cuando termine la búsqueda, las Excursiones Virtuales encontradas serán mostradas en esta pantalla.",
-		
+
 		"i.walkLearnMoreSmartcards"	: "Pulsa aquí para aprender más sobre las Smartcards.",
 
 		"i.walkEPackage_1"			: "Insertar un paquete de e-Learning",
@@ -621,7 +622,7 @@ VISH.Locales = {
 		"i.walkEVideo_9"			: "Cuando la diapositiva está seleccionada, se muestra en la pantalla y puedes editarla y borrarla de la misma forma que las diapositivas normales. Para seleccionar una diapositiva simplemente pulsa sobre ella en el 'panel de Vídeo Enriquecido'. Si quieres seleccionar el Vídeo Enriquecido nuevamente para editarlo, debes hacer click en el icono de Vídeo Enriquecido situado a la izquierda del 'panel de Vídeo Enriquecido'.",
 		"i.walkEVideo_10"			: "Las diapositivas tienen flechas arrastrables en su parte superior. Puedes arrastrar cualquiera de ellas a cualquier zona del Vídeo Enriquecido para crear un nuevo enlace a una marca de tiempo asociado con su diapositiva. Este enlace será añadido automaticamente al vídeo y a la 'Tabla de Contenidos'. El enlace se representa en el vídeo como una bola con la letra de su diapositiva asociada dentro. Puedes deslizar la bola a lo largo de la barra de progreso del vídeo para ajustar la marca de tiempo. También puedes editar la marca de tiempo y el título del enlace mediante los iconos situados a su lado en la tabla de contenidos. Si una diapositiva del Vídeo Enriquecido es eliminada, su enlace a marca de tiempo asociado (y por tanto la bola) también será eliminado.",
 		"i.walkEVideo_11"			: "Puedes añadir varias diapositivas  en el mismo instante de tiempo. Esto resulta de gran utilidad para incluir grandes cuestionarios divididos en varias diapositivas o para combinar diferentes tipos de recursos. Para ello, simplemente ponga la misma marca de tiempo a todos los enlaces que se encuentren asociados con las diapositivas que quiera mostrar juntas. Después, se mostrarán un par de flechas en la tabla de contenidos al lado de estos enlaces. Puedes usar estas flechas para especificar el orden en el cual los contenidos serán mostrados cuando el vídeo alcance esa marca de tiempo.",
-		
+
 		"i.walkSelectSlides_1"		: "Añadiendo diapositivas externas a tu presentación",
 		"i.walkSelectSlides_2"		: "Aquí puedes previsualizar la presentación que has decidido importar. Puedes insertar todas las diapositivas de la presentación o seleccionar solo aquellas que quieras insertar.",
 		"i.walkSelectSlides_3"		: "Teniendo en cuenta que por defecto se seleccionan todas las diapositivas, si quieres insertar la presentacióm completa solamente tienes que hacer click sobre el botón 'Añadir Diapositivas' situado en la zona inferior derecha de la pantalla.",
@@ -699,7 +700,7 @@ VISH.Locales = {
 		"i.CatalogueTitle"			: "Catálogo",
 		"i.Chemistry"				: "Química",
 		"i.ChooseFile"				: "Seleccionar",
-		"i.ChooseFileTip"			: "Elije un archivo", 
+		"i.ChooseFileTip"			: "Elije un archivo",
 		"i.Citizenship"				: "Educación para la Ciudadanía",
 		"i.ClassicalLanguages"		: "Lenguas Clásicas",
 		"i.close"					: "cerrar",
@@ -822,9 +823,9 @@ VISH.Locales = {
 		"i.next"					: "siguiente",
 		"i.Next"					: "Siguiente",
 		"i.no"						: "no",
-		"i.notify_teacher"			: "Notificar", 
-		"i.notified_teacher"		: "Notificado", 
-		"i.notify_teacher_confirmation"	: "¿Ha acabado el trabajo y desea notificar al profesor para que lo publique?", 
+		"i.notify_teacher"			: "Notificar",
+		"i.notified_teacher"		: "Notificado",
+		"i.notify_teacher_confirmation"	: "¿Ha acabado el trabajo y desea notificar al profesor para que lo publique?",
 		"i.No"						: "No",
 		"i.NoFileError"				: "No has seleccionado ningún archivo para importar.",
 		"i.NoJSONFileError"			: "Tienes que seleccionar un archivo para importar en formato JSON.",
@@ -870,7 +871,7 @@ VISH.Locales = {
 		"i.Publication"				: "Publicación",
 		"i.publish"					: "publicar",
 		"i.Publish"					: "Publicar",
-		"i.Published"				: "Publicado", 
+		"i.Published"				: "Publicado",
 		"i.publishing"				: "Publicando",
 		"i.Publishing"				: "Publicando",
 		"i.Publish_confirmation"	: "Vas a guardar y publicar esta Excursión Virtual en la plataforma ViSH. Después de esto, la excursión será pública y cualquiera podrá acceder a ella. ¿Qué deseas hacer?",
@@ -1059,7 +1060,7 @@ VISH.Locales = {
 		"i.ComputerScience"     	: "Informatique",
 		"i.delete"          		: "supprimer",
 		"i.Description"       		: "Description",
-		"i.difficult"       		: "difficile",      
+		"i.difficult"       		: "difficile",
 		"i.Difficulty"        		: "Difficulté",
 		"i.done"          			: "terminé",
 		"i.Done"          			: "Terminé",
@@ -1279,7 +1280,7 @@ VISH.Locales = {
 		"i.ComputerScience"     	: "Informatica",
 		"i.delete"          		: "verwijderen",
 		"i.Description"       		: "Beschrijving",
-		"i.difficult"       		: "moeilijk",      
+		"i.difficult"       		: "moeilijk",
 		"i.Difficulty"        		: "Moeilijkheid",
 		"i.done"          			: "klaar",
 		"i.Done"          			: "Klaar",
@@ -1504,7 +1505,7 @@ VISH.Locales = {
 		"i.ComputerScience"     	: "Informatika",
 		"i.delete"          		: "töröl",
 		"i.Description"       		: "Leírás",
-		"i.difficult"       		: "nehéz",      
+		"i.difficult"       		: "nehéz",
 		"i.Difficulty"        		: "Nehézség",
 		"i.Documentation"     		: "Dokumentáció",
 		"i.done"          			: "kész",
@@ -1734,7 +1735,7 @@ VISH.Locales = {
 		"i.ComputerScience"     	: "Computerwissenschaften",
 		"i.delete"          		: "Löschen",
 		"i.Description"       		: "Beschreibung",
-		"i.difficult"       		: "Schwierig",      
+		"i.difficult"       		: "Schwierig",
 		"i.Difficulty"        		: "Schwierigkeitsgrad",
 		"i.Documentation"     		: "Dokumentation",
 		"i.done"          			: "Erledigt",

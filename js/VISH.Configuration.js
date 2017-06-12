@@ -1,14 +1,14 @@
 VISH.Configuration = (function(V,$,undefined){
-  
+
   var configuration;
-  
-  var init = function(VEconfiguration){ 
+
+  var init = function(VEconfiguration){
     configuration = VEconfiguration;
     _applyConfiguration();
   };
 
   var _applyConfiguration = function(){
-    
+
     /////////////////////
     // VE paths
     /////////////////////
@@ -78,13 +78,13 @@ VISH.Configuration = (function(V,$,undefined){
       $("#tab_epackage").css("display","none").addClass("disabled");
       $("#menu a[action='insertPackage']").hide().addClass("disabled_config");
     }
-    
+
     //Attachments
     if(typeof V.UploadAttachmentPath == "undefined"){
       $("#attachment_in_presentation_details").css("display","none").addClass("disabled");
     }
 
-    
+
     ////////////////
     // Importations
     ////////////////
@@ -135,6 +135,12 @@ VISH.Configuration = (function(V,$,undefined){
       $("#tab_pic_europeana").css("display","none").addClass("disabled");
     }
 
+    //UCF
+    if(configuration["ucf"]!==true){
+      $("#menu_option_ucf").css("display","none").addClass("disabled");
+      $("#advanced_tabs a[tab='ucf-tab']").hide().addClass("disabled");
+    }
+
     ////////////////
     // Other services
     ////////////////
@@ -176,7 +182,7 @@ VISH.Configuration = (function(V,$,undefined){
     if(typeof configuration["publishPermissions"] != "object"){
       configuration["publishPermissions"] = [];
     }
-    
+
     if(configuration["publishPermissions"].indexOf("Comment") == -1){
       $("#allow_comment").parent("p").hide().addClass("disabled");
     }
@@ -204,14 +210,14 @@ VISH.Configuration = (function(V,$,undefined){
     });
 
   };
-  
+
   var getConfiguration = function(){
     return configuration;
   };
-  
+
   return {
       init                : init,
     getConfiguration    : getConfiguration
     };
-  
+
 }) (VISH, jQuery);

@@ -104,8 +104,12 @@
 
 	<script type="text/javascript" src="/js/VISH.SCORM.js"></script>
 	<script type="text/javascript" src="/js/VISH.SCORM.API.js"></script>
+
+	<script type="text/javascript" src="/js/VISH.UCF.js"></script>
+	<script type="text/javascript" src="/js/VISH.UCF.player.js"></script>
+	<script type="text/javascript" src="/js/VISH.UCF.client.js"></script>
 </head>
-  
+
 <body onload="start()" style="display: none" class="loaded" id="presentation_iframe">
 
 	<!-- Copy HTML from here -->
@@ -117,7 +121,7 @@
 	<div id="viewbar" style="display:none">
 		<a href="#" target="_blank"><div id="embedWatermark" class="watermark" style="display:none"></div></a>
 		<button id="page-fullscreen" class="fullscreen" type="submit" style="border: none; background-color: transparent; display: none;" tabindex="2"></button>
-		<button id="page-switcher-start" class="page-switcher" tabindex="2"></button>	    
+		<button id="page-switcher-start" class="page-switcher" tabindex="2"></button>
 		<div id="slide-counter-div" style="">
 			<input id="slide-counter-input" type="text" name="goToSlide" maxlength="2" value="1"><span id="slide-counter-span"></span>
 		</div>
@@ -216,11 +220,11 @@
 
 	<!-- Hidden link to open fancybox when start a quiz session inside a slide  -->
 	<a id="addQuizSessionFancybox" href="#start_quiz_fancybox" style="display: none;"></a>
-	
+
 	<!-- Quiz session fancybox -->
 	<div style='display:none'>
 		<div id="start_quiz_fancybox" class="outer_box_viewer">
-			<div class="fancy_viewer_tabs" id="images_fancy_tabs_id">     
+			<div class="fancy_viewer_tabs" id="images_fancy_tabs_id">
 				<ul>
 					<li><a i18n-key="i.LiveQuiz" href="#" id="tab_quiz_session" onclick="VISH.Quiz.loadTab('tab_quiz_session'); return false;" class="fancy_viewer_tab tabbable">Live Quiz</a></li>
 					<li><a i18n-key="i.QuizResults" href="#" id="tab_quiz_stats" onclick="VISH.Quiz.loadTab('tab_quiz_stats'); return false;"class="fancy_viewer_tab">Results</a></li>
@@ -338,9 +342,9 @@
 			getOptions();
 			var isPreview = false;
 			var parentSameDomain = false;
-			
+
 			try{
-				isPreview = 
+				isPreview =
 				(window.parent.VISH)                                                        &&
 				(window.parent.VISH.Editor)                                                 &&
 				(typeof window.parent.VISH.Editor.Preview.getPreview == "function")         &&

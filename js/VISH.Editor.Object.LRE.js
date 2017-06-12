@@ -1,5 +1,5 @@
 VISH.Editor.Object.LRE = (function(V,$,undefined){
-	
+
 	var containerDivId = "tab_object_lre_content";
 	var carrouselDivId = "tab_object_lre_content_carrousel";
 	var previewDivId = "tab_object_lre_content_preview";
@@ -9,7 +9,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 	var currentObject = new Array();
 	var selectedObject = null;
 
-  
+
 	var init = function(){
 		myInput = $("#" + containerDivId).find("input[type='search']");
 		$(myInput).vewatermark(V.I18n.getTrans("i.SearchContent"));
@@ -20,21 +20,21 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			}
 		});
 	}
-	
+
 	var beforeLoadTab = function(){
 		_cleanSearch();
 		_cleanObjectPreview();
 	}
-	
+
 	var onLoadTab = function(){
-		
+
 	};
 
 	var _requestData = function(text){
 		_prepareRequest();
 		V.Editor.LRE.requestObjects(text, _onDataReceived, _onAPIError);
 	};
-	
+
 	var _prepareRequest = function(){
 		_cleanCarrousel();
 		_cleanObjectPreview();
@@ -67,7 +67,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			return;
 		}
 
-		currentObject = new Array();  
+		currentObject = new Array();
 		var carrouselImages = [];
 		var carrouselImagesTitles = [];
 
@@ -83,7 +83,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 		options.callback = _onImagesLoaded;
 		V.Utils.Loader.loadImagesOnContainer(carrouselImages,carrouselDivId,options);
 	};
-	
+
 	var _onImagesLoaded = function(){
 		_onSearchFinished();
 		_drawData();
@@ -117,7 +117,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			options.rows = 1;
 			options.callback = _onClickCarrouselElement;
 			options.rowItems = 5;
-			options.scrollItems = 5;	
+			options.scrollItems = 5;
 			options.styleClass = "title";
 
 			options.afterCreateCarruselFunction = function(){
@@ -129,14 +129,14 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			V.Editor.Carrousel.createCarrousel(carrouselDivId, options);
 		}
 	}
-	
+
 	var _onAPIError = function(){
 		if(_isValidResult()){
 			_onSearchFinished();
 			_drawData(false);
 		}
-	}; 
-  
+	};
+
 	var _onClickCarrouselElement = function(event){
 		var objectId = $(event.target).attr("objectid");
 		if (typeof objectId != "undefined") {
@@ -145,7 +145,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			selectedObject = currentObject[objectId];
 		}
 	}
-  
+
   	var _isValidResult = function(){
 		if(typeof timestampLastSearch == "undefined"){
 			//Old search (not valid).
@@ -159,7 +159,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 
 		return true;
 	}
-  
+
 
   	/* Preview */
 
@@ -176,7 +176,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			$("#tab_object_lre_content_preview").find(".okButton").show();
 		}
 	}
-	
+
 	var _cleanObjectPreview = function(){
 		var objectArea = $("#tab_object_lre_content_preview_object");
 		var metadataArea = $("#tab_object_lre_content_preview_metadata");
@@ -191,7 +191,7 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 			$.fancybox.close();
 		}
 	}
-	
+
 	return {
 		init				: init,
 		beforeLoadTab		: beforeLoadTab,
@@ -203,4 +203,3 @@ VISH.Editor.Object.LRE = (function(V,$,undefined){
 
 
 
-  

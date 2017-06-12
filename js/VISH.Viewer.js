@@ -13,11 +13,11 @@ VISH.Viewer = (function(V,$,undefined){
 	var init = function(options, presentation){
 		V.Editing = false;
 		$("body").addClass("ViSHViewerBody");
-		
+
 		initOptions = (typeof options == "object") ? options : {};
 
 		V.Debugging.init(options);
-		
+
 		if((initOptions["configuration"])&&(V.Configuration)){
 			V.Configuration.init(initOptions["configuration"]);
 		}
@@ -31,7 +31,7 @@ VISH.Viewer = (function(V,$,undefined){
 		V.Utils.init();
 		V.I18n.init(initOptions,presentation);
 
-		V.Debugging.log("\n\nViSH Viewer init with presentation:\n"); 
+		V.Debugging.log("\n\nViSH Viewer init with presentation:\n");
 		V.Debugging.log(JSON.stringify(presentation));
 
 		presentation = V.Utils.fixPresentation(presentation);
@@ -40,7 +40,7 @@ VISH.Viewer = (function(V,$,undefined){
 			return;
 		}
 		current_presentation = presentation;
-		
+
 		V.Status.init(function(){
 			//Status loading finishes
 			_initAferStatusLoaded(options,presentation);
@@ -92,7 +92,7 @@ VISH.Viewer = (function(V,$,undefined){
 	var _initAferAnimationLoaded = function(options,presentation){
 		V.Slides.updateCurrentSlideFromHash();
 		//we have to update slides AFTER load theme and before anything
-		//This way we prevent undesired behaviours 
+		//This way we prevent undesired behaviours
 		V.Slides.updateSlides();
 
 		//Init some modules (and submodules) after render
@@ -121,10 +121,13 @@ VISH.Viewer = (function(V,$,undefined){
 
 		//After all, init tracking system
 		V.TrackingSystem.init();
+
+				//After all, init UCF
+		V.UCF.init();
 	};
 
-	
-	var getOptions = function(){	
+
+	var getOptions = function(){
 		return initOptions;
 	};
 
@@ -206,7 +209,7 @@ VISH.Viewer = (function(V,$,undefined){
 			V.Slideset.onLeaveSlideset(slide);
 		}
 	};
-	
+
 	/**
 	 * function to update the number that indicates what slide is diplayed
 	 * with this format: 1/12 2/12
@@ -220,7 +223,7 @@ VISH.Viewer = (function(V,$,undefined){
 		$("#slide-counter-input").val(slide_number);
 		$("#slide-counter-span").html("/" + number_of_slides);
 	};
-	
+
 	var getCurrentPresentation = function(){
 		return current_presentation;
 	};
@@ -236,7 +239,7 @@ VISH.Viewer = (function(V,$,undefined){
 
 
 	return {
-		init 						: init, 
+		init 						: init,
 		getOptions					: getOptions,
 		updateSlideCounter			: updateSlideCounter,
 		getCurrentPresentation		: getCurrentPresentation,

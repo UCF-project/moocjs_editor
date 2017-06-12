@@ -2,7 +2,7 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 
 	var _initialized = false;
 	var _hoverMenu = false;
-	
+
 	/*
 	 * Init singleton
 	 * Perform actions that must be executed only once
@@ -37,7 +37,7 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 			});
 
 			//enable menu toolbar button click
-			
+
 
 			//Prevent iframe to move
 			if(V.Status.getDevice().desktop){
@@ -55,7 +55,7 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 			} else {
 				V.exitPath = options.exitURL;
 			}
-			
+
 			_initialized = true;
 		}
 		$("#menu").show();
@@ -66,7 +66,7 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 			//menu click show withouth css instead of hover
 		if(V.Status.getDevice().desktop){
 			var _submenu = false;
-		
+
 			$("a:.menu_option_main").on('click',function(){
 				if($("#menu li > ul.menu_option_main").css('display') === 'none' ){
 					$("#menu li > ul.menu_option_main").css('display','block');
@@ -422,7 +422,7 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 					//JSON
 					options.text = V.I18n.getTrans("i.exportPresToJSONerrorNotification");
 				}
-				
+
 				var button1 = {};
 				button1.text = V.I18n.getTrans("i.Ok");
 				button1.callback = function(){
@@ -444,6 +444,10 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 
 	var exportToSCORM2004 = function(){
 		_exportTo("scorm2004");
+	};
+
+	var exportToSCORMUCF = function(){
+		_exportTo("scormUCF");
 	};
 
 	var displaySettings = function(){
@@ -474,10 +478,11 @@ VISH.Editor.Tools.Menu = (function(V,$,undefined){
 		exportToJSON 					: exportToJSON,
 		exportToSCORM12					: exportToSCORM12,
 		exportToSCORM2004				: exportToSCORM2004,
+		exportToSCORMUCF				: exportToSCORMUCF,
 		displaySettings					: displaySettings,
 		onPublishButtonClicked			: onPublishButtonClicked,
 		onUnpublishButtonClicked		: onUnpublishButtonClicked,
-		notifyTeacherClicked			: notifyTeacherClicked, 
+		notifyTeacherClicked			: notifyTeacherClicked,
 		onSaveButtonClicked 			: onSaveButtonClicked,
 		preview 						: preview,
 		help 							: help,
